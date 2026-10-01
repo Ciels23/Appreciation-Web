@@ -1,0 +1,396 @@
+/* ==============================================
+   GLOBAL STYLES — PURPLE THEME 💜
+============================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #f8f0fc 0%, #e9d5f7 50%, #d4b3f0 100%);
+    color: #3a2050;
+    line-height: 1.7;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hearts-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* ==============================================
+   WELCOME SCREEN — PURPLE 💜
+============================================== */
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f3e8fc 0%, #e4cff7 50%, #d4b3f0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.welcome-overlay.fade-out {
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+}
+
+.welcome-content {
+    text-align: center;
+    padding: 40px;
+    animation: welcomeFadeIn 1.2s ease forwards;
+}
+
+@keyframes welcomeFadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.welcome-decoration {
+    font-size: 1.3rem;
+    color: #9d70c4;
+    margin-bottom: 15px;
+    letter-spacing: 8px;
+}
+
+.welcome-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #7b2cb8;
+    margin-bottom: 5px;
+}
+
+.welcome-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #6a24a0;
+    margin-bottom: 10px;
+}
+
+.welcome-subtitle {
+    font-size: 1.1rem;
+    color: #604080;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.enter-btn {
+    background: linear-gradient(135deg, #a860e8, #8a30d8);
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(138, 48, 216, 0.3);
+}
+
+.enter-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(138, 48, 216, 0.4);
+}
+
+.enter-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==============================================
+   MAIN CONTENT
+============================================== */
+.main-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.main-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden { display: none; }
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    padding: 35px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 24px rgba(106, 36, 160, 0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(180, 140, 230, 0.25);
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero { text-align: center; }
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: #7b2cb8;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #604080;
+    font-style: italic;
+}
+
+.divider {
+    margin: 20px 0;
+    color: #9d70c4;
+    font-size: 1.1rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #6a24a0;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.click-note {
+    text-align: center;
+    color: #8060a0;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.content-box p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.reasons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ✅ ALIGNED BUTTONS — PURPLE 💜 */
+.reason-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 16px 20px;
+    background: rgba(220, 200, 250, 0.35);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    flex-wrap: nowrap;
+}
+
+.reason-item:hover {
+    transform: translateX(8px);
+    background: rgba(200, 160, 240, 0.45);
+}
+
+.emoji {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.reason-item p {
+    flex: 1;
+    margin: 0;
+    font-size: 1rem;
+    color: #4a3060;
+}
+
+/* ==============================================
+   BUTTONS — PURPLE 💜
+============================================== */
+.open-btn {
+    background: linear-gradient(135deg, #a860e8, #8a30d8);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(138, 48, 216, 0.25);
+    flex-shrink: 0;
+}
+
+.open-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(138, 48, 216, 0.35);
+}
+
+.open-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==============================================
+   MESSAGE & PHOTO
+============================================== */
+.message-box {
+    background: rgba(245, 235, 255, 0.7);
+    padding: 28px;
+    border-radius: 14px;
+    border-left: 3px solid #a860e8;
+    font-weight: 400;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    color: #7040a0;
+    margin-top: 10px;
+}
+
+.photo-placeholder {
+    text-align: center;
+    padding: 10px;
+}
+
+.bestie-photo {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(100, 60, 140, 0.12);
+}
+
+.photo-caption {
+    color: #503070;
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.photo-note {
+    text-align: center;
+    color: #705090;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 10px;
+    color: #8060a0;
+    font-size: 0.9rem;
+}
+
+/* ==============================================
+   MODAL / LETTER POPUP — PURPLE 💜
+============================================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(40, 20, 60, 0.45);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px;
+}
+
+.modal-content {
+    background: #fcf8ff;
+    padding: 40px 32px;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    animation: letterPop 0.5s ease forwards;
+    box-shadow: 0 10px 40px rgba(106, 36, 160, 0.2);
+}
+
+.letter-style {
+    background: linear-gradient(to bottom, #fcf8ff, #f3e8fc);
+    border: 1px solid #d4b3f0;
+    box-shadow: 0 8px 32px rgba(106, 36, 160, 0.15);
+}
+
+@keyframes letterPop {
+    from { transform: scale(0.8) translateY(30px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 1.4rem;
+    color: #9060c0;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover { color: #6a24a0; }
+
+/* ==============================================
+   STAGGERED ANIMATION FOR CARDS
+============================================== */
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.2s; }
+.card:nth-child(4) { animation-delay: 0.3s; }
+.card:nth-child(5) { animation-delay: 0.4s; }
+.card:nth-child(6) { animation-delay: 0.5s; }
+
+/* ==============================================
+   FLOATING HEARTS ANIMATION
+============================================== */
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100px) rotate(360deg); }
+}
+
+/* ==============================================
+   MOBILE RESPONSIVE
+============================================== */
+@media (max-width: 480px) {
+    .main-title { font-size: 2rem; }
+    .welcome-name { font-size: 2.2rem; }
+    .card { padding: 24px 18px; }
+    .modal-content { padding: 30px 20px; }
+    .reason-item { gap: 12px; padding: 14px 16px; }
+    .reason-item p { font-size: 0.9rem; }
+    .open-btn { padding: 7px 14px; font-size: 0.8rem; }
+    .enter-btn { padding: 12px 30px; font-size: 1rem; }
+}

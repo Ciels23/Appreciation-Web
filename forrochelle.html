@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Rochelle </title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="roch.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-bg"></div>
+
+    <!-- WELCOME SCREEN -->
+    <div id="welcome-screen" class="welcome-overlay">
+        <div class="welcome-content">
+            <h1 class="welcome-title">For You Bestie</h1>
+            <div class="welcome-decoration">✧ 🌸 ✧</div>
+            <button class="enter-btn" onclick="enterSite()">
+                Open this! <33
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content" class="main-wrapper hidden">
+        <main class="container">
+            <section class="card hero">
+                <h1 class="main-title">To Rochelle </h1>
+                <p class="subtitle">My mare, my safe place, my one call away.</p>
+                <div class="divider">✧ 🌸 ✧</div>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title">You Are</h2>
+                <div class="content-box">
+                    <p>You are the one who comforts me when I'm down</p>
+                    <p>You are the one who supports me in everything I do</p>
+                    <p>You are always by my side through every problem</p>
+                    <p>You are my <strong>one call away</strong> — always there, no matter what</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title">Thank You For</h2>
+                <p class="click-note">Click the button to open each letter 💌</p>
+                <div class="reasons">
+                    <div class="reason-item">
+                        <p>Comforting me when I need it most</p>
+                        <button class="open-btn" onclick="openLetter('letter1')">Open 💌</button>
+                    </div>
+                    <div class="reason-item">
+                        <p>Believing in me even when I don't</p>
+                        <button class="open-btn" onclick="openLetter('letter2')">Open 💌</button>
+                    </div>
+                    <div class="reason-item">
+                        <p>Staying by my side through everything</p>
+                        <button class="open-btn" onclick="openLetter('letter3')">Open 💌</button>
+                    </div>
+                    <div class="reason-item">
+                        <p>Being just one call away, always</p>
+                        <button class="open-btn" onclick="openLetter('letter4')">Open 💌</button>
+                    </div>
+                    <div class="reason-item">
+                        <p>Loving me exactly as I am</p>
+                        <button class="open-btn" onclick="openLetter('letter5')">Open 💌</button>
+                    </div>
+                    <div class="reason-item">
+                        <p>Listening & guiding me — especially with Pat</p>
+                        <button class="open-btn" onclick="openLetter('letter6')">Open 💌</button>
+                    </div>
+                    <div class="reason-item">
+                        <p>No complaints, no blame — just late-night talks</p>
+                        <button class="open-btn" onclick="openLetter('letter7')">Open 💌</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title">My Promise To You </h2>
+                <div class="message-box">
+                    <p>Dearest Rochelle,</p>
+                    <br>
+                    <p>Thank you for being my constant. For listening, for understanding, and for never leaving my side no matter what happens. When I have problems, you're the first person I want to talk to — because I know you'll be there.</p>
+                    <br>
+                    <p>You are my one call away, my safe place, and my favorite person. I don't say it enough, but I appreciate you more than words can say. I hope you know that I will always be here for you too — just like how you're always here for me.</p>
+                    <br>
+                    <p>Here's to more laughs, more memories, and a lifetime of friendship. I love you so much! 💕</p>
+                    <br>
+                    <p class="signature">— Your Pretty Friend</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title">Us Together 📸</h2>
+                <p class="photo-note">This is us — my favorite people, my happiest moments </p>
+                <div class="photo-placeholder">
+                    <img src="image/roch.jpg" alt="Us together" class="bestie-photo">
+                    <p class="photo-caption">This photo means so much to me — every smile, every laugh, every moment we share is something I will always treasure.</p>
+                    <p class="photo-caption">Thank you for being the most wonderful best friend I could ever ask for. You listen, you care, you stay — and you do it all without ever complaining or judging me.</p>
+                    <p class="photo-caption">I cherish our late-night talks, our quiet moments, and every memory we make together. You are truly my safe place, my person, my one call away.</p>
+                    <p class="photo-caption">We're so lucky to have you, Mare. Here's to a lifetime more of memories, laughter, and friendship. I love you so much!</p>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>Made with heart | For my one call away, Rochelle</p>
+            </footer>
+
+            <footer class="footer">
+                <p>@Cielo Caorte</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Letter Modal -->
+    <div class="modal" id="letterModal">
+        <div class="modal-content letter-style">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="letterContent"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="roch.js"></script>
+</body>
+</html>
